@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Github Profile Fetch Api</title>
+</head>
+
+<body>
+
+
+  <div class="container">
+    <h1 id="title">devfinder</h1>
+    <div class="search-bar">
+      <div class="search-nav">
+        <i class="fa fa-search"></i>
+        <input type="search" id="search-name" placeholder="Search GitHub Username...." />
+        <input type="button" id="search-button" value="Search" />
+      </div>
+    </div>
+
+    <h1 id="error-msg"></h1>
+
+    <div class="output-container" id="output">
+
+      <div>
+        <div class="profile-img" id="profile"></div>
+        <nav style="color:white">
+          <ul><i class="fa fa-map-marker" aria-hidden="true"><span id="location"></span>
+            </i></ul>
+          <ul><i class="fa fa-twitter" aria-hidden="true"></i><span id="twitter"></span></ul>
+          <ul><i class="fa fa-briefcase" aria-hidden="true"></i><span id="company"></span></ul>
+          <ul><i class="fa fa-link" aria-hidden="true"><span id="bio-link"> </span></i></ul>
+        </nav>
+      </div>
+
+      <div class="profile">
+        <header>
+          <div>
+            <h1 id="name"></h1>
+            <p id="joinDate"></p>
+          </div>
+        </header>
+        <p id="bio"></p>
+
+        <table>
+          <tr>
+            <th scope="col">Repos</th>
+            <th scope="col">Followers</th>
+            <th scope="col">Following</th>
+          </tr>
+          <tr>
+            <td id="reposCount"></td>
+            <td id="followCount"></td>
+            <td id="followersCount"></td>
+          </tr>
+        </table>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="script.js">
+</script>
+
+</html>
