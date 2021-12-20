@@ -35,8 +35,8 @@
 
                   document.getElementById('company').innerHTML = !data.company ? 'Unavailable' : data.company;
                   data.company;
-                  document.getElementById('bio-link').innerHTML = !data.blog ? 'Unavailable' : `<a href="https://${data.blog}">${data.blog}</a>`;
-
+                  document.getElementById('bio-link').innerHTML = !data.blog ? 'Unavailable' : `<a href="${data.blog.includes("https")?data.blog:`https://${data.blog}`}">${data.blog}</a>`;
+                 
 
 
                   document.getElementById('reposCount').innerHTML = data.public_repos;

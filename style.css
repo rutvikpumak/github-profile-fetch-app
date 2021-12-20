@@ -158,14 +158,11 @@ span{
 #title{
     padding-bottom: 1em;
 }
-#twitter > a{
+#twitter,#twitter > a,#bio-link,#bio-link > a{
     font-family: 'Public Sans', sans-serif;
     color: white;
 }
-#bio-link > a{
-    font-family: 'Public Sans', sans-serif;
-    color: white;
-}
+
 
 #bio-link:hover{
     text-decoration: underline;
@@ -201,6 +198,7 @@ span{
 
     .profile-section{
         margin-left: 0.5rem;
+        width:50%
        }
 
     span{
