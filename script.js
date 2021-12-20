@@ -7,14 +7,15 @@
           document.getElementById('output').style.display = "none";
       } else {
           document.getElementById('error-msg').innerHTML = "Loading...";
+          document.getElementById('output').style.display = "none";
       }
   })
-  
+
   searchBtn.addEventListener("click", () => {
 
       fetch(`https://api.github.com/users/${userName.value}`)
           .then(response => response.json().then(data => {
-              console.log(data.message)
+
               if (data.message === "Not Found") {
                   document.getElementById('error-msg').innerHTML = "User Not Found";
                   document.getElementById('output').style.display = "none";
@@ -40,13 +41,13 @@
 
                   document.getElementById('reposCount').innerHTML = data.public_repos;
                   document.getElementById('bio').innerHTML = data.bio;
-                  document.getElementById('followersCount').innerHTML = data.followers + " Followers";
-                  document.getElementById('followCount').innerHTML = data.following + " Following";
+                  document.getElementById('followersCount').innerHTML = data.followers;
+                  document.getElementById('followCount').innerHTML = data.following;
 
                   document.getElementById('profile').innerHTML = `
         <img src="${data.avatar_url}" />
         `
               }
-              //rutvikpumak
+
           }))
   })

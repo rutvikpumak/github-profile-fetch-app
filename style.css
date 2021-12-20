@@ -15,7 +15,7 @@ body{
     width: 100%;
     display: grid;
     place-items: center;
-    background: #bae6fd;
+    background: black;
     font-family: 'Public Sans', sans-serif;
 }
 
@@ -23,10 +23,10 @@ body{
     /* display:flex;
     flex-wrap: wrap; */
     justify-content: center;
-    background: #075985;
+    /* background: #075985; */
     margin:1rem auto;
     border-radius: 10px;
-    box-shadow: 1px 1px 10px #156cdd;
+    box-shadow: 1px 1px 25px #156cdd;
 }
 
 .container{
@@ -67,26 +67,26 @@ header > div > p{
     font-family: 'Public Sans', sans-serif
 }
 #bio{
-    width: 500px;
+     width: 500px;
     margin-bottom: 1rem;
 }
 table{
     margin-top: 2rem;
-    background-color:#06b6d4;
+    background-color:#0f172a;
     border-collapse: collapse;
     border-radius: 10px;
 }
 
 td,th{
-    padding:10px 45px;
+    padding:8px 30px;
 }
 td{
     text-align: center;
 }
 .search-bar{
-    box-shadow: 1px 1px 10px #156cdd;
+    box-shadow: 1px 1px 15px #156cdd;
     width: auto;
-    background-color:#075985;
+    /* background-color:#075985; */
     height: 70px;
     border-radius: 10px;
     margin: auto;
@@ -112,7 +112,8 @@ td{
     cursor: pointer;
 }
 #search-name{
-    background-color: #075985;
+    font-family: 'Public Sans', sans-serif;
+    background-color:black;
     padding: 10px;
     border: none;
     width: 600px;
@@ -154,6 +155,9 @@ span{
     margin-top: 3rem;
     text-align: center;
 }
+#title{
+    padding-bottom: 1em;
+}
 #twitter > a{
     font-family: 'Public Sans', sans-serif;
     color: white;
@@ -173,8 +177,47 @@ span{
     margin-top: 5px;
 }
 
-/* @media(max-width:900px) {
+
+ @media(max-width:800px) {
     body{
         background: black;
+        display: block;
+        font-size: 12px;
     }
-} */
+    .container{
+        margin:5rem 1.5rem;
+    }
+    td,th{
+        padding:7px 10px;
+    }
+    #bio{
+        width: 200px;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .profile{
+        margin-left: 10px;
+    }
+
+    .profile-section{
+        margin-left: 0.5rem;
+       }
+
+    span{
+        margin-left: 0.5rem;
+    }
+    #title{
+        text-align: center;
+    }
+  
+} 
+
+@media(max-width:432px) {
+    .container{
+        margin:5rem auto;
+    }
+    nav{
+        margin-left: 1rem;
+    }
+  
+} 
