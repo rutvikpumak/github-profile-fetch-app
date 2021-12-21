@@ -1,53 +1,61 @@
-  const searchBtn = document.getElementById("search-button");
+  const searchBtn = document.getElementById('search-button');
   const userName = document.getElementById('search-name');
 
-  userName.addEventListener("input", () => {
+  const profileImg = document.getElementById('profile');
+  const nameOfUser = document.getElementById('name');
+  const joinDate = document.getElementById('joinDate')
+  const bio = document.getElementById('bio');
+
+  const repoCount = document.getElementById('reposCount')
+  const followCount = document.getElementById('followCount');
+  const followersCount = document.getElementById('followersCount');
+
+  const twitterId = document.getElementById('twitter');
+  const locationName = document.getElementById('location');
+  const company = document.getElementById('company');
+  const blog = document.getElementById('bio-link');
+
+  const errorMsg = document.getElementById('error-msg');
+  const output = document.getElementById('output');
+
+  userName.addEventListener('input', () => {
       if (userName.value.length < 5) {
-          document.getElementById('error-msg').innerHTML = "";
-          document.getElementById('output').style.display = "none";
+          errorMsg.innerHTML = '';
+          output.style.display = 'none';
       } else {
-          document.getElementById('error-msg').innerHTML = "Loading...";
-          document.getElementById('output').style.display = "none";
+          errorMsg.innerHTML = 'Loading...';
+          output.style.display = 'none';
       }
   })
 
-  searchBtn.addEventListener("click", () => {
+  searchBtn.addEventListener('click', () => {
 
       fetch(`https://api.github.com/users/${userName.value}`)
           .then(response => response.json().then(data => {
 
-              if (data.message === "Not Found") {
-                  document.getElementById('error-msg').innerHTML = "User Not Found";
-                  document.getElementById('output').style.display = "none";
+              if (data.message === 'Not Found') {
+                  errorMsg.innerHTML = 'User Not Found';
+                  output.style.display = 'none';
               } else {
-                  document.getElementById('output').style.display = "flex";
-                  document.getElementById('twitter').style.color = "white"
-                  document.getElementById('error-msg').innerHTML = "";
+                  output.style.display = 'flex';
+                  twitterId.style.color = 'white';
+                  errorMsg.innerHTML = '';
 
-                  document.getElementById('name').innerHTML = !data.name ? 'Unavailable' : data.name;
-                  document.getElementById('joinDate').innerHTML = `Joined on ${data.created_at.split("T")[0]}`;
+                  profileImg.innerHTML = `<a href=${data.html_url}><img src='${data.avatar_url}' /></a>`;
 
+                  nameOfUser.innerHTML = !data.name ? 'Unavailable' : `<a href=${data.html_url}>${data.name}</a>`;
+                  joinDate.innerHTML = `Joined on ${data.created_at.split('T')[0]}`;
+                  bio.innerHTML = data.bio;
 
-                  document.getElementById('location').innerHTML = !data.location ? 'Unavailable' : data.location;
-                  document.getElementById('twitter').innerHTML = !data.twitter_username ? 'Unavailable' : `<a href="https://twitter.com/${data.twitter_username}">@${data.twitter_username}</a>`;
+                  locationName.innerHTML = !data.location ? 'Unavailable' : data.location;
+                  twitterId.innerHTML = !data.twitter_username ? 'Unavailable' : `<a href='https://twitter.com/${data.twitter_username}'>@${data.twitter_username}</a>`;
+                  company.innerHTML = !data.company ? 'Unavailable' : data.company;
+                  blog.innerHTML = !data.blog ? 'Unavailable' : `<a href='${data.blog.includes('https')?data.blog:`https://${data.blog}`}'>${data.blog}</a>`;
 
-
-
-                  document.getElementById('company').innerHTML = !data.company ? 'Unavailable' : data.company;
-                  data.company;
-                  document.getElementById('bio-link').innerHTML = !data.blog ? 'Unavailable' : `<a href="${data.blog.includes("https")?data.blog:`https://${data.blog}`}">${data.blog}</a>`;
-                 
-
-
-                  document.getElementById('reposCount').innerHTML = data.public_repos;
-                  document.getElementById('bio').innerHTML = data.bio;
-                  document.getElementById('followersCount').innerHTML = data.followers;
-                  document.getElementById('followCount').innerHTML = data.following;
-
-                  document.getElementById('profile').innerHTML = `
-        <img src="${data.avatar_url}" />
-        `
+                  repoCount.innerHTML = data.public_repos;
+                  bio.innerHTML = data.bio;
+                  followersCount.innerHTML = data.followers;
+                  followCount.innerHTML = data.following;
               }
-
           }))
   })

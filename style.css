@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400&display=swap');
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,8 +10,7 @@
 }
 
 
-body{
-    height: 100vh;
+body {
     width: 100%;
     display: grid;
     place-items: center;
@@ -19,20 +18,39 @@ body{
     font-family: 'Public Sans', sans-serif;
 }
 
-.output-container{
-    /* display:flex;
-    flex-wrap: wrap; */
+.output-container {
     justify-content: center;
-    /* background: #075985; */
-    margin:1rem auto;
+    margin: 1rem auto;
     border-radius: 10px;
     box-shadow: 1px 1px 25px #156cdd;
 }
 
-.container{
-    margin:10rem auto;
+.container {
+    margin: 5rem auto;
 }
-img{
+
+.title-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    justify-content: center;
+    margin: 3rem auto;
+}
+
+.git-img {
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    background-color: #075985;
+}
+
+#title {
+    color: #075985;
+    padding-left: 0.7rem;
+    margin-top: 2rem;
+}
+
+#profile img {
     margin-left: 25px;
     margin-top: 35px;
     height: 100px;
@@ -40,69 +58,77 @@ img{
     border-radius: 50%;
 }
 
-.username h1{
- 
+.username h1 {
     font-weight: bold;
 }
 
-.profile{
+#name>a {
+    color: white;
+}
+
+.profile {
     margin-top: 40px;
     margin-left: 24px;
     margin-right: 24px;
     color: white;
 }
 
-.profile > header{
+.profile>header {
     display: flex;
     flex-wrap: wrap;
 }
 
-header > div > p{
+header>div>p {
     font-size: 10px;
     letter-spacing: 0.5px;
     padding-bottom: 2rem;
 }
-#location{
+
+#location {
     padding-left: 5px;
     font-family: 'Public Sans', sans-serif
 }
-#bio{
-     width: 500px;
+
+#bio {
+    width: 500px;
     margin-bottom: 1rem;
 }
-table{
+
+table {
     margin-top: 2rem;
-    background-color:#0f172a;
+    background-color: #0f172a;
     border-collapse: collapse;
     border-radius: 10px;
 }
 
-td,th{
-    padding:8px 30px;
+td,
+th {
+    padding: 8px 30px;
 }
-td{
+
+td {
     text-align: center;
 }
-.search-bar{
-    box-shadow: 1px 1px 15px #156cdd;
+
+.search-bar {
+    box-shadow: 1px 1px 10px #156cdd;
     width: auto;
-    /* background-color:#075985; */
     height: 70px;
     border-radius: 10px;
     margin: auto;
 }
 
-.search-nav{
+.search-nav {
     display: flex;
     font-size: 1.5rem;
-    color:#60a5fa;
-    padding:1rem;
+    color: #60a5fa;
+    padding: 1rem;
     width: 100%;
     justify-content: center;
 }
 
 
-#search-button{
+#search-button {
     background-color: #60a5fa;
     padding: 10px;
     color: white;
@@ -111,9 +137,10 @@ td{
     border-radius: 5px;
     cursor: pointer;
 }
-#search-name{
+
+#search-name {
     font-family: 'Public Sans', sans-serif;
-    background-color:black;
+    background-color: black;
     padding: 10px;
     border: none;
     width: 600px;
@@ -122,100 +149,117 @@ td{
     outline: none;
 }
 
-#search-name::placeholder{
+#search-name::placeholder {
     color: rgb(182, 174, 174);
 }
-#search-button:hover{
-    background-color: #2563eb;
+
+#search-button:hover {
+    background-color: #446ea5;
 }
 
-#title{
-    color:#075985;
-    margin-bottom: 1rem;
-}
-ul{ 
+
+ul {
     text-decoration: none;
-     margin: 1rem;
+    margin: 1rem;
 }
 
-span{
+span {
     color: white;
     margin-left: 1rem;
 }
-.profile-img > nav{
+
+.profile-img>nav {
     color: white;
 }
 
-#output{
+#output {
     display: none;
 }
 
-#error-msg{
-    color:#075985;
+#error-msg {
+    color: #075985;
     margin-top: 3rem;
     text-align: center;
 }
-#title{
+
+#title {
     padding-bottom: 1em;
 }
-#twitter,#twitter > a,#bio-link,#bio-link > a{
+
+#twitter,
+#twitter>a,
+#bio-link,
+#bio-link>a {
     font-family: 'Public Sans', sans-serif;
     color: white;
 }
 
 
-#bio-link:hover{
+#bio-link:hover {
     text-decoration: underline;
 }
-#twitter:hover{
+
+#twitter:hover {
     text-decoration: underline;
 }
-.search-nav > i{
+
+.search-nav>i {
     margin-top: 5px;
 }
 
 
- @media(max-width:800px) {
-    body{
+@media(max-width:800px) {
+    body {
         background: black;
         display: block;
         font-size: 12px;
     }
-    .container{
-        margin:5rem 1.5rem;
+
+    .container {
+        margin: 5rem 1.5rem;
     }
-    td,th{
-        padding:7px 10px;
+
+    td,
+    th {
+        padding: 7px 10px;
     }
-    #bio{
+
+    #bio {
         width: 200px;
         margin-bottom: 0.5rem;
         margin-right: 0.5rem;
     }
-    .profile{
+
+    .profile {
         margin-left: 10px;
     }
 
-    .profile-section{
+    .profile-section {
         margin-left: 0.5rem;
-        width:50%
-       }
+        width: 50%
+    }
 
-    span{
+    span {
         margin-left: 0.5rem;
     }
-    #title{
+
+    #title {
         text-align: center;
     }
-  
-} 
+
+    .git-img {
+        height: 40px;
+        width: 40px;
+    }
+}
 
 @media(max-width:432px) {
-    .container{
-        margin:5rem auto;
+    .container {
+        margin: 5rem auto;
     }
-    nav{
+
+    nav {
         margin-left: 1rem;
     }
-  
-} 
+
+}
